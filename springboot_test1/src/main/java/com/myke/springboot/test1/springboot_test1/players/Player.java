@@ -1,21 +1,40 @@
 package com.myke.springboot.test1.springboot_test1.players;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity(name="Player")
 public class Player {
 	
-	private int customer_id;
+	@Id
+	@Column(name = "player_id", nullable = false)
+	private Integer playerId;
+	
+	@Column(name = "name", nullable = false)
 	private String name;
-	private String team ="EWAN";
+	
+	@Column(name = "team", nullable = false, columnDefinition = "VARCHAR(50)")
+	private String team;
+	
+	@Column(name = "position", nullable = false)
+	private String position;
+	
 	public Player() {
 	}
-	public Player(int customer_id, String name) {
+	
+	public Player(Integer playerId, String name, String team, String position) {
 		super();
-		this.customer_id = customer_id;
+		this.playerId = playerId;
+		this.name = name;
+		this.team = team;
+		this.position = position;
 	}
-	public int getCustomer_id() {
-		return customer_id;
+	public Integer getPlayerId() {
+		return playerId;
 	}
-	public void setCustomer_id(int customer_id) {
-		this.customer_id = customer_id;
+	public void setPlayerId(Integer playerId) {
+		this.playerId = playerId;
 	}
 	public String getName() {
 		return name;
@@ -23,5 +42,20 @@ public class Player {
 	public void setName(String name) {
 		this.name = name;
 	}
+	public String getTeam() {
+		return team;
+	}
+	public void setTeam(String team) {
+		this.team = team;
+	}
+	public String getPosition() {
+		return position;
+	}
+	public void setPosition(String position) {
+		this.position = position;
+	}
+	
+	
+	
 
 }

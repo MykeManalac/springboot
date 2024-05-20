@@ -9,9 +9,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class PlayersServiceImpl implements PlayersService{
 	
-	@Autowired
-	private PlayerMapper mapper;
-	
 
 	public PlayersServiceImpl() {
 		super();
@@ -20,22 +17,22 @@ public class PlayersServiceImpl implements PlayersService{
 
 	@Override
 	public List<Player> getAllPlayers() throws SQLException {
-		return mapper.getAllPlayers();
+		return null;
 	}
 
 	@Override
 	public Integer saveNewPlayer(Player player) throws SQLException {
-		return mapper.saveNewPlayer(player);
+		return null;
 	}
 
 	@Override
 	public String getPlayerName(int id) throws SQLException {
-		return mapper.getPlayerName(id);
+		return null;
 	}
 
 	@Override
 	public String isExisting(int id) throws SQLException {
-		return mapper.isIdExisting(id);
+		return null;
 	}
 
 }
